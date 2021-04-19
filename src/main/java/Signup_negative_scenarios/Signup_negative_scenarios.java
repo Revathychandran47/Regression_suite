@@ -51,7 +51,6 @@ public class Signup_negative_scenarios extends Generic_function{
 	@When("User enters invalid email id")
 	public static void signup_negative_tc_002() throws IOException {
 		try {
-			browser_refresh();
 			driver.findElement(By.xpath(OR_reader("Object_Locator","signup_email_id"))).sendKeys(td_reader("signup_email_id",0));
 			click("signup_phone_number");
 			str= driver.findElement(By.xpath(OR_reader("Object_Locator","emailid_valid_msg"))).getText();
@@ -66,7 +65,6 @@ public class Signup_negative_scenarios extends Generic_function{
 	@When("User leaves Email ID field blank")
 	public static void signup_negative_tc_003() throws Exception  {
 		try {
-			browser_refresh();
 			click("signup_email_id");
 			click("signup_phone_number");
 			str = driver.findElement(By.xpath(OR_reader("Object_Locator","emailid_valid_msg"))).getText();
@@ -81,7 +79,6 @@ public class Signup_negative_scenarios extends Generic_function{
  @When("User enters  phone number with less than 10 digits")
 	public static void signup_negative_tc_004() throws IOException {
 		try {
-			browser_refresh();
 			driver.findElement(By.xpath(OR_reader("Object_Locator","signup_phone_number"))).sendKeys(td_reader("signup_phone_number",0));
 			click("signup_password");
 			str= driver.findElement(By.xpath(OR_reader("Object_Locator","phonenumber_valid_msg"))).getText();
@@ -96,7 +93,6 @@ public class Signup_negative_scenarios extends Generic_function{
 	@When("User enters  phone number with more than 10 digits")
 	public static void signup_negative_tc_005() throws IOException {
 		try {
-			browser_refresh();
 			driver.findElement(By.xpath(OR_reader("Object_Locator","signup_phone_number"))).sendKeys(td_reader("signup_phone_number",1));
 			click("signup_password");
 			str= driver.findElement(By.xpath(OR_reader("Object_Locator","phonenumber_valid_msg"))).getText();
@@ -111,8 +107,6 @@ public class Signup_negative_scenarios extends Generic_function{
 	@When("User enters already registered phone number")
 	public static void signup_negative_tc_006() throws IOException {
 		try {
-			
-			browser_refresh();
 			driver.findElement(By.xpath(OR_reader("Object_Locator","signup_first_name"))).sendKeys(td_reader("signup_first_name",1));
 			driver.findElement(By.xpath(OR_reader("Object_Locator","signup_last_name"))).sendKeys(td_reader("signup_last_name",1));
 			driver.findElement(By.xpath(OR_reader("Object_Locator","signup_email_id"))).sendKeys(td_reader("signup_email_id",1));
@@ -134,7 +128,6 @@ public class Signup_negative_scenarios extends Generic_function{
 	@When("User leaves the password field blank")
 	public static void signup_negative_tc_007() throws IOException  {
 		try {
-			browser_refresh();
 			click("signup_password");
 			click("signup_confirm_password");
 			str = driver.findElement(By.xpath(OR_reader("Object_Locator","password_valid_msg"))).getText();
@@ -149,7 +142,6 @@ public class Signup_negative_scenarios extends Generic_function{
 	@When("User enters password")
 	public static void signup_negative_tc_008() throws IOException {
 		try {
-			browser_refresh();
 			driver.findElement(By.xpath(OR_reader("Object_Locator","signup_password"))).sendKeys(td_reader("signup_password",1));
 			str= driver.findElement(By.xpath(OR_reader("Object_Locator","passwordstrength_valid_msg"))).getText();
 			Assert.assertEquals(str,"Password Strength - Very strong");
@@ -163,7 +155,6 @@ public class Signup_negative_scenarios extends Generic_function{
 	@When("User enters password and confirm password data differently")
 	public static void signup_negative_tc_009() throws IOException  {
 		try {
-			browser_refresh();
 			driver.findElement(By.xpath(OR_reader("Object_Locator","signup_password"))).sendKeys(td_reader("signup_password",1));
 			driver.findElement(By.xpath(OR_reader("Object_Locator","signup_confirm_password"))).sendKeys(td_reader("signup_confirm_password",0));
 			click("signup_referral_code");
@@ -179,7 +170,6 @@ public class Signup_negative_scenarios extends Generic_function{
 	@When("Check box is unchecked")
 	public static void signup_negative_tc_010() throws IOException  {
 		try {
-			browser_refresh();
 			Assert.assertEquals(driver.findElement(By.xpath(OR_reader("Object_Locator","signup_terms_and_conditions"))).isSelected(),false);
 			Assert.assertEquals(driver.findElement(By.xpath(OR_reader("Object_Locator","signup"))).isEnabled(),true);
 			} catch (IOException e) {
